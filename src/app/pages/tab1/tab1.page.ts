@@ -45,7 +45,7 @@ export class Tab1Page {
           // Crear la lista
           const listaId = this.listaService.crearLista( data.nombre );
 
-          this.router.navigateByUrl(`/tabs/tab1/agregar/${ listaId }`);
+          this.router.navigateByUrl(`/tabs/pendientes/agregar/${ listaId }`);
 
           }
         }

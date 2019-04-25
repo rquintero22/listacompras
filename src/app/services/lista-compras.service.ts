@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Lista } from '../models/lista.model';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class ListaComprasService {
 
   listas: Lista[] = [];
 
-  constructor() {
+  constructor( private storage: NativeStorage) {
 
     const list1 = new Lista('Compras Pricesmart');
     const list2 = new Lista('Compras Automercado');
@@ -34,6 +35,7 @@ export class ListaComprasService {
 
   guardarStorage() {
     localStorage.setItem('listaCompras', JSON.stringify( this.listas ));
+    this.storage.setItem('listaCompras', JSON.stringify( this.listas )).then();
   }
 
   cargarStorage() {
@@ -48,6 +50,10 @@ export class ListaComprasService {
   borrarLista( lista: Lista ) {
     return this.listas = this.listas.filter( listaData => listaData.id !== lista.id );
     this.guardarStorage();
+  }
+
+  guardarPresupuesto( monto: number ) {
+    this.storage.setItem('presupuest', { presupuesto: monto } ).then();
   }
 
  

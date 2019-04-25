@@ -1,17 +1,22 @@
 <ion-menu side="start" menuId="menuPrincipal"
-contentId="main">
+contentId="main" color="dark">
   <ion-header>
-    <ion-toolbar color="primary">
+    <ion-toolbar color="dark">
       <ion-title>Lista de compras</ion-title>
+      <ion-avatar>
+        <img src="../../../assets/shapes.svg" alt="">
+      </ion-avatar>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+  <ion-content color="dark">
     <ion-list>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
+      <ion-menu-toggle *ngFor="let menu of menuOpts | async">
+          <ion-item  [routerLink]="menu.redirectTo" routerLinkActive="router-link-active" color="dark">
+        <ion-icon slot="start" [name]="menu.icon"></ion-icon>
+        <ion-label>{{ menu.name }}</ion-label>      
+      </ion-item>
+      </ion-menu-toggle>    
+    
     </ion-list>
   </ion-content>
 </ion-menu>

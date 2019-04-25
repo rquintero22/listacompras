@@ -22,9 +22,9 @@ export class ListasComponent implements OnInit {
 
   listaSeleccionada( compra: Lista ) {
     if ( this.terminada ) {
-      this.router.navigateByUrl(`/tabs/tab2/agregar/${ compra.id }`);
+      this.router.navigateByUrl(`/tabs/historial/agregar/${ compra.id }`);
     } else {
-      this.router.navigateByUrl(`/tabs/tab1/agregar/${ compra.id }`);
+      this.router.navigateByUrl(`/tabs/pendientes/agregar/${ compra.id }`);
     }
   }
 

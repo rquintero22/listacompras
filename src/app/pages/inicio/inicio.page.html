@@ -1,12 +1,27 @@
 <ion-header no-border>
-  <ion-toolbar>
+  <ion-toolbar color="dark">   
+
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <!-- <ion-button (click)="toggleMenu()">
+        <ion-icon name="menu" slot="icon-only"></ion-icon>
+      </ion-button> -->
+      <ion-menu-button color="light" menu="menuPrincipal"></ion-menu-button>
     </ion-buttons>
+
+
     <ion-title>Lista de compra</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <img src="../../../assets/icons/icon-152x152.png" alt="">
+<ion-content color="dark">
+  <ion-card>
+    <ion-card-title>
+        <img src="../../../assets/administratuHogar.png"class="img-fluid" alt="">
+    </ion-card-title>
+    <ion-card-content>
+      
+    </ion-card-content>
+  </ion-card>
+  
+ 
 </ion-content>

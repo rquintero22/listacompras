@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListaComprasService } from 'src/app/services/lista-compras.service';
 
 @Component({
   selector: 'app-presupuesto',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PresupuestoPage implements OnInit {
 
-  constructor() { }
+  presupuesto: number;
+
+  constructor( public listaCompraService: ListaComprasService ) { }
 
   ngOnInit() {
+
+  }
+
+  guardarPresupuesto( ) {
+    this.listaCompraService.guardarPresupuesto( this.presupuesto );
   }
 
 }

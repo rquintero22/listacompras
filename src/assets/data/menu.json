@@ -1,0 +1,12 @@
+[
+    {
+        "icon": "clipboard",
+        "name": "Lista de compras",
+        "redirectTo": "/tabs"
+    },
+    {
+        "icon": "menu",
+        "name": "Presupuesto",
+        "redirectTo": "/presupuesto"
+    }
+]
